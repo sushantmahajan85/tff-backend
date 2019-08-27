@@ -39,7 +39,7 @@ const RootMutation = new GraphQLObjectType({
                 numBottles: {type: GraphQLNonNull(GraphQLInt)}
             },
             resolve(parent, args) {
-                var code = name.substring(0, 4)
+                var code = args.name.substring(0, 4)
                 var sampleSet = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
                 for (var i =0 ; i < 4; i++) {
                     code += sampleSet[Math.floor(Math.random() * 10)]
